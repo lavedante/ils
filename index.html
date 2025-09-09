@@ -1,0 +1,269 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets Around the World with Aticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #1a73e8;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .description {
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 1rem auto;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h2 {
+            color: #1a73e8;
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 0.5rem;
+        }
+        .region {
+            margin: 1.5rem 0;
+        }
+        .region h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .region ul {
+            list-style: none;
+            padding: 0;
+        }
+        .region ul li {
+            margin: 0.5rem 0;
+        }
+        .region ul li a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .region ul li a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .description {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+            .container {
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tickets Around the World with Aticket</h1>
+        <p>Discover concerts, theatre, comedy, sports, and festivals worldwide.</p>
+        <div class="description">
+            <p>Whether you're chasing a world tour, planning a theatre weekend, or looking for a family show abroad, the Aticket network brings local discovery together with a global view. Each regional portal highlights concerts, theatre, comedy, sports, and festivals, with local language where relevant and direct links to trusted sellers. Explore our global and regional hubs to find the perfect event, anywhere in the world.</p>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Global Hubs</h2>
+        <div class="region">
+            <ul>
+                <li><a href="https://aticket.net">aticket.net — Worldwide overview</a></li>
+                <li><a href="https://aticket.eu">aticket.eu — European overview</a></li>
+            </ul>
+        </div>
+
+        <h2>Europe</h2>
+        <div class="region">
+            <h3>United Kingdom</h3>
+            <ul>
+                <li><a href="https://aticket.uk">aticket.uk</a></li>
+            </ul>
+            <h3>Germany</h3>
+            <ul>
+                <li><a href="https://atickets.de">atickets.de</a></li>
+            </ul>
+            <h3>France</h3>
+            <ul>
+                <li><a href="https://fr.aticket.net">fr.aticket.net</a></li>
+            </ul>
+            <h3>Spain</h3>
+            <ul>
+                <li><a href="https://es.aticket.eu">es.aticket.eu</a></li>
+            </ul>
+            <h3>Italy</h3>
+            <ul>
+                <li><a href="https://it.aticket.net">it.aticket.net</a></li>
+            </ul>
+            <h3>Netherlands</h3>
+            <ul>
+                <li><a href="https://nl.aticket.eu">nl.aticket.eu</a></li>
+            </ul>
+            <h3>Belgium</h3>
+            <ul>
+                <li><a href="https://be.aticket.eu">be.aticket.eu</a></li>
+            </ul>
+            <h3>Switzerland</h3>
+            <ul>
+                <li><a href="https://ch.aticket.eu">ch.aticket.eu</a></li>
+            </ul>
+            <h3>Austria</h3>
+            <ul>
+                <li><a href="https://at.aticket.eu">at.aticket.eu</a></li>
+            </ul>
+            <h3>Norway</h3>
+            <ul>
+                <li><a href="https://no.aticket.eu">no.aticket.eu</a></li>
+            </ul>
+            <h3>Sweden</h3>
+            <ul>
+                <li><a href="https://se.aticket.eu">se.aticket.eu</a></li>
+            </ul>
+            <h3>Finland</h3>
+            <ul>
+                <li><a href="https://fi.aticket.eu">fi.aticket.eu</a></li>
+            </ul>
+            <h3>Denmark</h3>
+            <ul>
+                <li><a href="https://dk.aticket.net">dk.aticket.net</a></li>
+            </ul>
+            <h3>Czech Republic</h3>
+            <ul>
+                <li><a href="https://cz.afishka.top">cz.afishka.top</a></li>
+            </ul>
+            <h3>Poland</h3>
+            <ul>
+                <li><a href="https://pl.afishka.top">pl.afishka.top</a></li>
+            </ul>
+            <h3>Israel</h3>
+            <ul>
+                <li><a href="https://aticket.co.il">aticket.co.il</a></li>
+            </ul>
+            <h3>Türkiye (Turkey)</h3>
+            <ul>
+                <li><a href="https://tr.aticket.net">tr.aticket.net</a></li>
+            </ul>
+        </div>
+
+        <h2>Africa</h2>
+        <div class="region">
+            <h3>South Africa</h3>
+            <ul>
+                <li><a href="https://za.aticket.net">za.aticket.net</a></li>
+            </ul>
+        </div>
+
+        <h2>Oceania</h2>
+        <div class="region">
+            <h3>New Zealand</h3>
+            <ul>
+                <li><a href="https://nz.aticket.net">nz.aticket.net</a></li>
+            </ul>
+        </div>
+
+        <h2>UAE</h2>
+        <div class="region">
+            <ul>
+                <li><a href="https://tickets.almaszone.com">tickets.almaszone.com — Curated tickets gateway</a></li>
+            </ul>
+        </div>
+
+        <h2>Russian Sites</h2>
+        <div class="region">
+            <h3>Israel</h3>
+            <ul>
+                <li><a href="https://afishka.co.il">afishka.co.il</a></li>
+            </ul>
+            <h3>Germany</h3>
+            <ul>
+                <li><a href="https://afishka.de">afishka.de</a></li>
+            </ul>
+            <h3>Europe</h3>
+            <ul>
+                <li><a href="https://afishka.top">afishka.top</a></li>
+            </ul>
+            <h3>USA</h3>
+            <ul>
+                <li><a href="https://afishka.net">afishka.net</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Aticket. All rights reserved.</p>
+    </footer>
+</body>
+</html>
