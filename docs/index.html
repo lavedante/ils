@@ -1,11 +1,128 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<title>ILS Exchange Shortcode — Demo</title>
-<meta name="robots" content="index,follow">
-<main style="max-width:720px;margin:4rem auto;font:16px/1.6 system-ui,sans-serif">
-  <h1>ILS Exchange Shortcode — Demo</h1>
-  <p>Display live ILS exchange rates with a simple shortcode.</p>
-  <p><a href="https://fungets.co.il/%d7%a4%d7%9c%d7%90%d7%92%d7%99%d7%9f-%d7%9e%d7%98%d7%97-%d7%9c%d7%90%d7%aa%d7%a8%d7%99-%d7%95%d7%95%d7%a8%d7%93%d7%a4%d7%a8%d7%a1-%d7%9c%d7%a9%d7%a2%d7%a8%d7%99-%d7%97%d7%9c%d7%99%d7%a4%d7%99%d7%9f/">Live Demo</a></p>
+<head>
+  <meta charset="utf-8">
+  <title>ILS Exchange Shortcode — Demo & Aticket Network</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Live demo of the ILS Exchange Shortcode for WordPress and an overview of the Aticket tickets network across countries.">
+  <style>
+    :root { --fg:#0b0b0b; --muted:#60656b; --accent:#2563eb; --bg:#ffffff; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--fg); background:var(--bg); font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; }
+    main { max-width: 980px; margin: 48px auto; padding: 0 20px 64px; }
+    h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 8px; }
+    h2 { font-size: 1.35rem; margin: 32px 0 12px; }
+    p  { margin: 0 0 12px; color: var(--fg); }
+    .muted { color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .btn {
+      display:inline-block; padding:10px 16px; border-radius:10px;
+      border:1px solid rgba(0,0,0,.08); box-shadow:0 1px 2px rgba(0,0,0,.06);
+    }
+    .grid { display:grid; gap:10px; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); }
+    .card {
+      padding:14px 14px 12px; border:1px solid rgba(0,0,0,.08);
+      border-radius:14px; background:#fff;
+      box-shadow:0 1px 2px rgba(0,0,0,.04);
+    }
+    .section-note { background:#f7f9ff; border:1px solid #e6edff; padding:12px 14px; border-radius:12px; }
+    footer { margin-top: 44px; font-size: .92rem; color: var(--muted); }
+    ul.inline > li { margin: 0 0 6px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>ILS Exchange Shortcode — Demo & Aticket Network</h1>
+    <p class="muted">A lightweight shortcode to display Israeli Shekel (ILS) exchange rates on WordPress. Used across the Aticket event-ticket network worldwide.</p>
+  </header>
+
+  <section>
+    <h2>Live Demo</h2>
+    <p>
+      See the shortcode in action on a production site:
+      <a class="btn" href="https://fungets.co.il/%d7%a4%d7%9c%d7%90%d7%92%d7%99%d7%9f-%d7%9e%d7%98%d7%97-%d7%9c%d7%90%d7%aa%d7%a8%d7%99-%d7%95%d7%95%d7%a8%d7%93%d7%a4%d7%a8%d7%a1-%d7%9c%d7%a9%d7%a2%d7%a8%d7%99-%d7%97%d7%9c%d7%99%d7%a4%d7%99%d7%9f/">Live Demo</a>
+    </p>
+    <p class="section-note">
+      Tip: This page is served from GitHub Pages (plain HTML). Links on this page are standard followed links unless you explicitly add <code>rel="nofollow"</code>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Tickets Around the World with <strong>Aticket</strong></h2>
+    <p>
+      Whether you’re chasing a world tour, planning a theatre weekend, or looking for a family show abroad, the
+      <strong>Aticket</strong> network brings local discovery together with a global view. Each regional portal highlights
+      concerts, theatre, comedy, sports and festivals, with local language where relevant and direct links to trusted sellers.
+    </p>
+
+    <h3>Global hubs</h3>
+    <ul class="inline">
+      <li><a href="https://aticket.net/">aticket.net</a> — Worldwide overview</li>
+      <li><a href="https://aticket.eu/">aticket.eu</a> — European overview</li>
+    </ul>
+
+    <h3>Europe</h3>
+    <div class="grid">
+      <div class="card"><strong>United Kingdom</strong><br><a href="https://aticket.uk">aticket.uk</a></div>
+      <div class="card"><strong>Germany</strong><br><a href="https://atickets.de">atickets.de</a></div>
+      <div class="card"><strong>France</strong><br><a href="https://fr.aticket.net/">fr.aticket.net</a></div>
+      <div class="card"><strong>Spain</strong><br><a href="https://es.aticket.eu/">es.aticket.eu</a></div>
+      <div class="card"><strong>Italy</strong><br><a href="https://it.aticket.net/">it.aticket.net</a></div>
+      <div class="card"><strong>Netherlands</strong><br><a href="https://nl.aticket.eu/">nl.aticket.eu</a></div>
+      <div class="card"><strong>Belgium</strong><br><a href="https://be.aticket.eu/">be.aticket.eu</a></div>
+      <div class="card"><strong>Switzerland</strong><br><a href="https://ch.aticket.eu/">ch.aticket.eu</a></div>
+      <div class="card"><strong>Austria</strong><br><a href="https://at.aticket.eu/">at.aticket.eu</a></div>
+      <div class="card"><strong>Norway</strong><br><a href="https://no.aticket.eu/">no.aticket.eu</a></div>
+      <div class="card"><strong>Sweden</strong><br><a href="https://se.aticket.eu/">se.aticket.eu</a></div>
+      <div class="card"><strong>Finland</strong><br><a href="https://fi.aticket.eu/">fi.aticket.eu</a></div>
+      <div class="card"><strong>Denmark</strong><br><a href="https://dk.aticket.net/">dk.aticket.net</a></div>
+      <div class="card"><strong>Czech Republic</strong><br><a href="https://cz.afishka.top/">cz.afishka.top</a></div>
+      <div class="card"><strong>Poland</strong><br><a href="http://pl.afishka.top/">pl.afishka.top</a></div>
+    </div>
+
+    <h3>Middle East &amp; Mediterranean</h3>
+    <div class="grid">
+      <div class="card"><strong>Israel</strong><br>
+        <a href="https://aticket.co.il/">aticket.co.il</a> •
+        <span class="muted">Russian-language hub:</span> <a href="https://afishka.net/">afishka.net</a>
+      </div>
+      <div class="card"><strong>Türkiye (Turkey)</strong><br><a href="https://tr.aticket.net/">tr.aticket.net</a></div>
+    </div>
+
+    <h3>Africa</h3>
+    <ul class="inline">
+      <li><a href="https://za.aticket.net/">za.aticket.net</a> — South Africa</li>
+    </ul>
+
+    <h3>Oceania</h3>
+    <ul class="inline">
+      <li><a href="https://nz.aticket.net/">nz.aticket.net</a> — New Zealand</li>
+    </ul>
+
+    <h3>Niche &amp; Partnered Spaces</h3>
+    <ul class="inline">
+      <li><a href="https://tickets.almaszone.com">tickets.almaszone.com</a> — Curated tickets gateway</li>
+    </ul>
+
+    <p class="muted">
+      Pro tip: Use city/date filters and compare venues—big tours often add extra nights in nearby cities.
+    </p>
+  </section>
+
+  <section>
+    <h2>About the Plugin</h2>
+    <p>
+      <strong>ILS Exchange Shortcode</strong> displays ILS exchange rates against popular currencies anywhere on a WordPress site
+      using a simple shortcode. It supports flags, names, codes, last-updated timestamp and more—without hidden links.
+    </p>
+  </section>
+
+  <footer>
+    <p>© ILS Exchange Shortcode • Built by Michael Mesheryakov • Licensed under CC BY 4.0.</p>
+  </footer>
 </main>
+</body>
 </html>
