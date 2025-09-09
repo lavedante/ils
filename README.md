@@ -2,6 +2,9 @@
 <body>
 <h1>ILS Exchange Shortcode — WordPress Plugin</h1>
 <p><em>A lightweight, free shortcode to display Israeli Shekel (ILS) exchange rates on any WordPress site. Used across the Aticket event-ticket network worldwide.</em></p>
+  <p>Display Israeli Shekel (ILS) exchange rates anywhere with [ILS]. Clean, customizable, free. <a href="https://fungets.co.il/%d7%a4%d7%9c%d7%90%d7%92%d7%99%d7%9f-%d7%9e%d7%98%d7%97-%d7%9c%d7%90%d7%aa%d7%a8%d7%99-%d7%95%d7%95%d7%a8%d7%93%d7%a4%d7%a8%d7%a1-%d7%9c%d7%a9%d7%a2%d7%a8%d7%99-%d7%97%d7%9c%d7%99%d7%a4%d7%99%d7%9f/">See live demo</a>
+
+<p>Download the working plugin here: <a href="https://fungets.co.il/wp-content/uploads/2024/05/ils-exchange-rate.zip">Download</a>
 <hr>
 <h2>Overview</h2>
 <p>If you run a finance-oriented WordPress site, you’ve likely wanted to show the <strong>USD</strong> and <strong>EUR</strong> rates in a way that’s clean, fast, and reliable. Most widgets are clunky and often inject external links. That’s why we built a <strong>friendly, free, and easy-to-use</strong> plugin.</p>
@@ -45,11 +48,6 @@
 <h2>Shortcode</h2>
 <pre><code class="language-text">[ILS attr="value" ...]
 </code></pre>
-<p>Display Israeli Shekel (ILS) exchange rates anywhere with [ILS]. Clean, customizable, free. <a href="https://fungets.co.il/%d7%a4%d7%9c%d7%90%d7%92%d7%99%d7%9f-%d7%9e%d7%98%d7%97-%d7%9c%d7%90%d7%aa%d7%a8%d7%99-%d7%95%d7%95%d7%a8%d7%93%d7%a4%d7%a8%d7%a1-%d7%9c%d7%a9%d7%a2%d7%a8%d7%99-%d7%97%d7%9c%d7%99%d7%a4%d7%99%d7%9f/">See live demo</a>
-
-<p>Download the working plugin here: <a href="https://fungets.co.il/wp-content/uploads/2024/05/ils-exchange-rate.zip">Download</a>
-
-
 <h3>Supported currencies</h3>
 <p>Use any of: <code inline="">USD, EUR, CAD, AUD, JPY, GBP, CHF, NOK, DKK, EGP, LBP, JOD, SEK, ZAR</code><br>
 (When <code inline="">currency="all"</code> or omitted, all available currencies are shown.)</p>
